@@ -147,12 +147,12 @@ const foodArr = [
 */
 
 //CODE HERE
-const foodIdentfier = (array) => {
-    return array.filter((tags) => foodArr.tags)[1]
+// const foodIdentfier = (array) => {
+//     return array.filter((tags) => foodArr.tags)[1]
 
 
-const filteredFood = foodArr.filter()
-
+const filteredFood = foodArr.filter((food) => food.tags.includes('kids'))
+console.log(filteredFood)
 
 
 //////////////////PROBLEM 5////////////////////
@@ -196,6 +196,17 @@ const filteredFood = foodArr.filter()
 
 //CODE HERE
 
+const filterByProperty = (property, number, type) => {
+    const foodFilter = foodArray.filter((food) => {
+        if(type === 'above'){
+            return food[property] > number
+        } else{
+            return food[property] <= number
+        }
+    })
+    return foodFilter 
+}
+
 
 /*
     Invoke the `filterByProperty` function passing
@@ -205,3 +216,5 @@ const filteredFood = foodArr.filter()
 */
 
 //CODE HERE
+
+console.log(filterByProperty('popularity', 3, 'above'))

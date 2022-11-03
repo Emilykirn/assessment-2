@@ -32,21 +32,16 @@
 //CODE HERE
 class Ticket {
     constructor (items, orderTime, customerID){
-    this.item = time;
+    this.items = times;
     this.orderTime = orderTime;
     this.customerID = customerID;
+    this.status = 'queued'
 }
-}
-class Status extends Ticket {
-    constructor(items, orderTime, customerID, status){
-        super(items, orderTime, customerID)
-        this.status = 'queued'
 
-        updateStatus("newStatus"){
-            console.log(`The order for customer,` this.customerID, `is now `
-            this.status)
-        }
-    }
+updateStatus("newStatus"){
+   this.status = newStatus
+   console.log(`The order for customer ${this.customerID} is now ${this.status}`)
+}
 }
 
 /*
@@ -61,7 +56,11 @@ class Status extends Ticket {
 */
 
 //CODE HERE
- let firstTicket = new Ticket ('pizza', '7:03 PM', 575)
+
+const firstTicket = new Ticket ('pizza', '7:03 PM', 575)
+
+console.log(firstTicket)
+
 
 /*
     Call the `updateStatus` method on
@@ -71,3 +70,5 @@ class Status extends Ticket {
 
 //CODE HERE
 updateStatus(firstTicket('cooking'))
+
+firstTicket.updateStatus('cooking')

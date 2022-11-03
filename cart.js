@@ -34,11 +34,14 @@ const cart = [
 ]
 
 //CODE HERE
-const reduced = cart.reduce(function(acc, curr){
-    return acc + curr
-})
+// const reduced = cart.reduce(function(acc, curr){
+//     return acc + curr
+// })
 
- const summedPrice = cart.reduce()
+ const summedPrice = cart.reduce((accumulator, current) => {
+     console.log(accumulator)
+     return accumulator + current.price 
+ },0 )
 
 
 //////////////////PROBLEM 2////////////////////
@@ -58,10 +61,18 @@ const reduced = cart.reduce(function(acc, curr){
 
 //CODE HERE
 
+// const calcFinalPrice = (cartTotal, couponValue, tax) => {
+//     (cartTotal * 1.06) + cartTotal - couponValue 
+//     return calcFinalPrice
+// }
+
 const calcFinalPrice = (cartTotal, couponValue, tax) => {
-    (cartTotal * 1.06) + cartTotal - couponValue 
-    return calcFinalPrice
-}
+    const totalBeforeCoupon = cartTotal * (1 + tax)
+    const finalPrice = totalBeforeCoupon - couponValue
+
+    return finalPrice
+
+    console.log(calcFinalPrice(summedPrice, 5, .06))
 
 //////////////////PROBLEM 3////////////////////
 /*  
